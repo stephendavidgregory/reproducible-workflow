@@ -1,0 +1,190 @@
+---
+# Document details
+title: "title"
+# date: "`r format(Sys.time(), "%A %d %B %Y")`"
+authors: 
+  - name: Stephen D. Gregory$^{1,2,*}$
+    orcid: 0000-0002-8230-0191
+  - name: _et al_.
+email: "[stephen.gregory@cefas.gov.uk](mailto:stephen.gregory@cefas.gov.uk)"
+abstract: |
+
+  $^{1}$ The Centre for Environment, Fisheries and Aquaculture Science, Barrack Road, Weymouth, Dorset DT4 8UB, UK
+
+  $^{2}$ Department of Life and Environmental Sciences, Faculty of Science and Technology, Bournemouth University, Poole BH12 5BB, UK
+
+  \* Corresponding author: tel: +44 1929 330 437; email: {{< meta email >}}
+abstract-title: Affiliations
+  
+# Output details
+format: 
+  docx:
+    number-sections: true
+    highlight-style: github
+  html:
+    number-sections: true
+    embed-resources: true
+
+# Quarto execute options
+execute: 
+  eval: true
+  echo: false
+  message: false
+  warning: false
+  code-fold: true
+  code-summary: "expand for full code"
+  fig-align: "center"
+
+# other quarto options
+from: markdown+emoji
+
+# References
+csl: ecology.csl # more at www.zotero.org/styles
+bibliography: references.bib
+link-citations: true
+
+# Analysis details
+version: "`r version$version.string`"
+packages: ""
+dependencies: ""
+---
+
+```{r doc_setup}
+
+# document setup ----------------------------------------------------------
+
+# clear workspace
+rm(list = ls())
+
+# document setup
+library(here)
+library(readxl)
+
+```
+
+**Short title**
+
+**Keywords**
+
+## Abstract
+
+<!-- Analysis starts here Analysis starts here Analysis starts here Analysis starts here -->
+
+```{r analysis}
+
+# choose analysis ---------------------------------------------------------
+
+# choose analyses
+do__orgdata <- 0
+do__analysis1 <- 0
+
+# if any analyses chosen, then do analysis
+anly_choices <- sapply(ls(pattern = "do__"), function(v) eval(parse(text = v)))
+do__anly <- ifelse(any(as.logical(anly_choices)), 1, 0)
+if (do__anly) {
+  
+  # r setup -----------------------------------------------------------------
+  source(here("scripts", "r-setup.R"))
+  
+  # libraries & functions ---------------------------------------------------
+  source(here("scripts", "libraries-and-functions.R"))
+  
+  # analysis options --------------------------------------------------------
+  source(here("scripts", "analysis-options.R"))
+  
+  # analysis options --------------------------------------------------------
+  source(here("scripts", "global-variables.R"))
+  
+  # organise data -----------------------------------------------------------
+  if (do__orgdata) source(here("scripts", "00-orgdata.R"))
+  
+  # analysis1 script --------------------------------------------------------
+  if (do__analysis1) source(here("scripts", "01-analysis1.R"))
+  
+  # close -------------------------------------------------------------------
+  source(here("scripts", "close.R"))
+  
+}
+
+```
+
+\newpage
+
+<!-- Document starts here Document starts here Document starts here Document starts here -->
+
+# Main message (25 words)
+
+# Working abstract (300 words)
+
+<!-- * Why are you doing this? [context and aim] -->
+
+<!-- * What did you do? [methods] -->
+
+<!-- * What did you find? [core results] -->
+
+<!-- * What does this mean? [interpretation in context] -->
+
+<!-- * What is it good for? [application] -->
+
+# Title (15 words)
+
+-   List 2-3 alternatives
+
+# Figures and tables
+
+## Tables (max. 2)
+
+-   Order by importance
+
+## Figures (max. 6)
+
+-   Order by importance
+
+# Journal
+
+-   List 2-3 alternatives
+
+# Manuscript skeleton (3000 words)
+
+## Introduction (600)
+
+Nice paper - @Gregory2019.
+
+## Methods (900)
+
+## Results (500)
+
+## Discussion (800)
+
+## Conclusion (200)
+
+## References
+
+::: {#refs}
+:::
+
+\newpage
+
+## Supplementary material
+
+# Notes
+
+## Citing and Cross-referencing
+
+```{=html}
+<!-- Cross-referencing
+
+"See Figure \@ref(fig:figure1)" is equivalent to "See Figure 1" but will update with change in figure order. 
+
+-->
+```
+```{r figure1, echo = FALSE, fig.cap = "Figure 1 caption."}
+# knitr::include_graphics("Plots/figure1.jpg")
+```
+
+# Reading
+
+# Analysis code
+
+```{r RmdCode, ref.label = knitr::all_labels(), echo = FALSE, eval = FALSE}
+```
