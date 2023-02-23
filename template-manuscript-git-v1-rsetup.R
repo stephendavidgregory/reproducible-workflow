@@ -10,7 +10,7 @@ save_it <- 1
 notify_me <- 1
 
 # changelog
-change_log <- 1
+change_log <- 0 ## SG (2023-02-23) DO NOT USE UNTIL FIXED!
 
 # make plots
 make_plots <- 1
