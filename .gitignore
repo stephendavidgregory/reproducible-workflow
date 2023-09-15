@@ -2,3 +2,11 @@
 .Rhistory
 .RData
 .Ruserdata
+
+working/
+TODO.md
+
+*.doc*
+*.xls*
+*.htm*
+*.pdf

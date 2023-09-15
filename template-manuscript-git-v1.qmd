@@ -78,22 +78,22 @@ library(readxl)
 do__orgdata <- 0
 do__analysis1 <- 0
 
+# r setup -----------------------------------------------------------------
+source(here("scripts", "r-setup.R"))
+
+# libraries & functions ---------------------------------------------------
+source(here("scripts", "libraries-and-functions.R"))
+
+# analysis options --------------------------------------------------------
+source(here("scripts", "analysis-options.R"))
+
+# analysis options --------------------------------------------------------
+source(here("scripts", "global-variables.R"))
+
 # if any analyses chosen, then do analysis
 anly_choices <- sapply(ls(pattern = "do__"), function(v) eval(parse(text = v)))
 do__anly <- ifelse(any(as.logical(anly_choices)), 1, 0)
 if (do__anly) {
-  
-  # r setup -----------------------------------------------------------------
-  source(here("scripts", "r-setup.R"))
-  
-  # libraries & functions ---------------------------------------------------
-  source(here("scripts", "libraries-and-functions.R"))
-  
-  # analysis options --------------------------------------------------------
-  source(here("scripts", "analysis-options.R"))
-  
-  # analysis options --------------------------------------------------------
-  source(here("scripts", "global-variables.R"))
   
   # organise data -----------------------------------------------------------
   if (do__orgdata) source(here("scripts", "00-orgdata.R"))

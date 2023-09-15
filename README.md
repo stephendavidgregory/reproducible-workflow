@@ -52,6 +52,9 @@ cp.exe %yp%\references.bib .\references.bib
 :: make an empty readme
 echo. | set /p=>README.md
 
+:: make an empty readme
+echo. | set /p=>TODO.md
+
 
 :: FIXES
 
@@ -66,6 +69,9 @@ echo. | set /p=>README.md
 
 :: initialise GIT
 git init
+
+:: copy over gitignore
+cp.exe %yp%\.gitignore .\.gitignore
 
 :: message
 pause

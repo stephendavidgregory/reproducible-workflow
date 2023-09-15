@@ -5,6 +5,9 @@ library(here)
 library(ggplot2)
 library(extrafont)
 
+## potentially useful packages
+# library(mathml) # for producing latex output from expressions - see https://github.com/mgondan/mathml
+
 # functions
 
 # ggplot style
