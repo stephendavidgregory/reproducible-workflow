@@ -70,7 +70,7 @@ if (change_log) {
   } else {
     
     # message
-    message("CHANGELOG only works if the "findInFiles" package is installed.")
+    message("CHANGELOG only works if the \"findInFiles\" package is installed.")
     
   }
   
