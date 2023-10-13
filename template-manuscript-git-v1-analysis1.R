@@ -48,8 +48,16 @@
 
 # save results ------------------------------------------------------------
 
-# ## save out results
-# res_nm <- __RESULTSNAME__
-# f_nm <- paste0(res_nm, "_", tday, ".RData"))
-# save(__RESULTS__, 
-#      file = here("results", f_nm)
+# ## save list
+# save_lst <- c(
+#
+#   ### model results
+#   "res" # res
+#
+# )
+#
+# ## save image
+# if (save_it) {
+#   fle_nm <- paste0(prj_nm, "-results.RData")
+#   save(list = save_lst, file = here("results", fle_nm))
+# }

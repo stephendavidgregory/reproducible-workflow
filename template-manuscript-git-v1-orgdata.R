@@ -39,10 +39,19 @@
 # use odbc::dbConnect in "Connections" tab for accdb
 # use odbcDriverConnect("Driver={Microsoft Access Driver (*.mdb, *.accdb)};DBQ=C:/Users/SG14/.../test.mdb") for mdb / accdb / etc
 
+
 # save data ---------------------------------------------------------------
 
-# ## save out data
-# dat_nm <- __DATANAME__
-# f_nm <- paste0(dat_nm, "_", tday, ".RData")
-# save(__DATA__, 
-#      file = here("data", f_nm))
+# ## save list
+# save_lst <- c(
+#
+#   ### model data
+#   "dat" # dat
+#
+# )
+#
+# ## save image
+# if (save_it) {
+#   fle_nm <- paste0(prj_nm, "-data.RData")
+#   save(list = save_lst, file = here("data", fle_nm))
+# }

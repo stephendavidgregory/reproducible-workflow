@@ -29,3 +29,10 @@ testing <- 1
 
 # today"s date
 tday <- format(Sys.time(), "%d%m%Y")
+
+# project name
+if (all(c("here", "stringr") %in% rownames(installed.packages()))) {
+  prj_nm <- here::here() |> stringr::str_extract("[^/]*$")
+} else {
+  prj_nm <- readline("Please enter a project name: ")
+}
