@@ -101,10 +101,10 @@ if (do__anly) {
   # analysis1 script --------------------------------------------------------
   if (do__analysis1) source(here("scripts", "01-analysis1.R"))
   
-  # close -------------------------------------------------------------------
-  source(here("scripts", "close.R"))
-  
 }
+
+# close ---------------------------------------------------------------------
+source(here("scripts", "close.R"))
 
 ```
 
