@@ -1,6 +1,6 @@
 # analysis 1 script -------------------------------------------------------
 
-## a script `sourced` by the .Rmd to run the first analysis.
+## a script `sourced` by the .qmd to run the first analysis.
 
 
 # info --------------------------------------------------------------------

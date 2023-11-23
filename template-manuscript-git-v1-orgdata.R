@@ -1,6 +1,6 @@
 # data organisation script ------------------------------------------------
 
-## a script `sourced` by the .Rmd to organise the data for the analysis.
+## a script `sourced` by the .qmd to organise the data for the analysis.
 
 # info --------------------------------------------------------------------
 
