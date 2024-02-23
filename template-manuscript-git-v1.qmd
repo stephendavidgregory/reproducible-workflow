@@ -18,12 +18,12 @@ abstract-title: Affiliations
   
 # Output details
 format: 
-  docx:
-    number-sections: true
-    highlight-style: github
   html:
     number-sections: true
     embed-resources: true
+  docx:
+    number-sections: true
+    highlight-style: github
 
 # Quarto execute options
 execute: 
@@ -49,7 +49,8 @@ packages: ""
 dependencies: ""
 ---
 
-```{r doc_setup}
+```{r}
+#| label: doc_setup
 
 # document setup ----------------------------------------------------------
 
@@ -70,7 +71,9 @@ library(readxl)
 
 <!-- Analysis starts here Analysis starts here Analysis starts here Analysis starts here -->
 
-```{r analysis}
+```{r}
+#| label: analysis
+#| eval: false
 
 # choose analysis ---------------------------------------------------------
 
@@ -168,6 +171,44 @@ Nice paper - @Gregory2019.
 ## Supplementary material
 
 # Notes
+
+## Tables
+
+<!-- Table x -->
+
+```{r}
+#| label: tbl-tabx
+#| tbl-cap: The table caption.
+
+## if table exists
+if (file.exists(here("tablex.csv"))) {
+  
+  ## read it
+  tab <- fread(here("tablex.csv"))
+  
+  ## print it
+  kable(tab, align = rep("l", dim(tab)[2]), format = "pandoc")
+  
+} else {
+  
+  ## do nothing
+  NULL
+  
+}
+
+```
+
+This references @tbl-tabx.
+
+
+## Figures
+
+<!-- Figure x -->
+
+![The figure caption.](plots/figx.jpg){#fig-figx}
+
+This references @fig-figx.
+
 
 ## Citing and Cross-referencing
 
